@@ -18,7 +18,8 @@ namespace RossPieShopDemo.Controllers
         }
         public IActionResult Index()
         {
-            return View(_pieRepository.GetAllPies().OrderBy(p=>p.Name));
+            var pie = _pieRepository.GetAllPies().OrderBy(p => p.Name);
+            return View(pie);
         }
 
         public IActionResult Privacy()
